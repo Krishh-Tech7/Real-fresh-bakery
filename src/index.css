@@ -1,0 +1,144 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+/* ═══════════════════════════════════════
+   CrumbleCo — Global Styles
+   ═══════════════════════════════════════ */
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background-color: #FFFDF9;
+    color: #2C1A0E;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #D4A04A;
+    color: #FFFDF9;
+  }
+
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #FDF6EC;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #D4A04A;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #B8862D;
+  }
+
+  /* Focus styles */
+  *:focus-visible {
+    outline: 2px solid #D4A04A;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* Glass morphism card */
+  .glass-card {
+    background: rgba(253, 246, 236, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 160, 74, 0.15);
+    border-radius: 16px;
+  }
+
+  .glass-card-dark {
+    background: rgba(44, 26, 14, 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(212, 160, 74, 0.2);
+    border-radius: 16px;
+  }
+
+  /* Grain texture overlay */
+  .grain-overlay {
+    position: relative;
+  }
+  .grain-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Decorative flourish */
+  .flourish {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .flourish::before,
+  .flourish::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #D4A04A, transparent);
+  }
+
+  /* Golden frame for images */
+  .golden-frame {
+    border: 2px solid #D4A04A;
+    border-radius: 16px;
+    padding: 6px;
+    background: linear-gradient(135deg, #D4A04A22, #D4A04A08);
+  }
+
+  /* Shimmer loading effect */
+  .shimmer {
+    background: linear-gradient(90deg, #FDF6EC 25%, #FAE9CC 50%, #FDF6EC 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  /* Badge styles */
+  .badge-new { @apply bg-emerald-100 text-emerald-700 dark:bg-emerald-900 dark:text-emerald-300; }
+  .badge-bestseller { @apply bg-amber-100 text-amber-700 dark:bg-amber-900 dark:text-amber-300; }
+  .badge-limited { @apply bg-rose-100 text-rose-600 dark:bg-rose-900 dark:text-rose-300; }
+  .badge-sale { @apply bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300; }
+
+  /* Section padding */
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24;
+  }
+
+  /* Container */
+  .container-app {
+    @apply max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+}
