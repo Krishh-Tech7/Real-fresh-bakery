@@ -1,4 +1,4 @@
-# CrumbleCo Bakery 🥐
+# Real Fresh Bakery 🥐
 
 > Artisan bakery e-commerce — built with React 18, TypeScript, Vite & Razorpay.
 
