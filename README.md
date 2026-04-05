@@ -1,4 +1,4 @@
-# CrumbleCo Bakery 🥐
+# Real Fresh Bakery 🥐
 
 > Artisan bakery e-commerce — built with React 18, TypeScript, Vite & Razorpay.
 
@@ -16,8 +16,8 @@
 
 ## Getting Started
 ```bash
-git clone https://github.com/Krishh-T/crumbleco-bakery.git
-cd crumbleco-bakery
+git clone https://github.com/Krishh-Tech7/Real-fresh-bakery.git
+cd Real-fresh-bakery
 git checkout frontend
 npm install
 cp .env.example .env.local
